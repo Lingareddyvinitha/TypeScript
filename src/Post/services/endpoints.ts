@@ -1,7 +1,7 @@
 const endpoints = {
-    posts: {
-        postList: 'posts'
-    }
+  posts: {
+    postList: 'posts'
+  }
 }
 
 export { endpoints }

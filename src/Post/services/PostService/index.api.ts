@@ -6,26 +6,24 @@ import { POST_BASE_URL } from '../../constants/EnvironmentConstants'
 
 import { endpoints } from '../endpoints'
 
-import PostService from "."
-
+import PostService from '.'
 
 class PostAPIService implements PostService {
-    api: Record<string, any>
-    constructor() {
-        this.api = create({
-            baseURL: POST_BASE_URL
-        })
-    }
+  api: Record<string, any>
+  constructor() {
+    this.api = create({
+      baseURL: POST_BASE_URL
+    })
+  }
 
-    async getPostsAPI() {
-        return networkCallWithApisauce(
-            this.api,
-            endpoints.posts.postList,
-            {},
-            apiMethods.get
-        )
-    }
-
+  async getPostsAPI() {
+    return networkCallWithApisauce(
+      this.api,
+      endpoints.posts.postList,
+      {},
+      apiMethods.get
+    )
+  }
 }
 
 export default PostAPIService
