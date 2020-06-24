@@ -13,10 +13,13 @@ import {
   TODOS_ROUTE_PATH
 } from './constants/NavigationConstants'
 import TodosRoute from './routes/TodosRoute'
+import PostRoute from './Post/routes/PostRoute'
+import { POSTS_ROUTE_PATH } from './Post/constants/NavigationConstants'
+import postStores from './Post/stores'
 
 const App = () => {
   return (
-    <Provider {...stores}>
+    <Provider {...stores} {...postStores}>
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path={SAMPLE_ROUTE_PATH}>
@@ -24,6 +27,9 @@ const App = () => {
           </Route>
           <Route exact path={TODOS_ROUTE_PATH}>
             <TodosRoute />
+          </Route>
+          <Route exact path={POSTS_ROUTE_PATH}>
+            <PostRoute />
           </Route>
           <Route path={HOME_ROUTE_PATH}>
             <HomeRoute />
