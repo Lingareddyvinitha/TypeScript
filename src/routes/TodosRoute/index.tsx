@@ -81,7 +81,6 @@ class TodosRoute extends Component<TodosRouteProps> {
   })
 
   render() {
-    console.log('todo route')
     const { getTodoListAPIStatus, getTodoListAPIError } = this.getTodoStore()
     return (
       <LoadingWrapperWithFailure

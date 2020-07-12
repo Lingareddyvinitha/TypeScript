@@ -1,0 +1,8 @@
+{
+  "posts": {
+    "title": "पद",
+    "title_plural": "पदों",
+    "total": "कुल पोस्ट: {{count}}",
+    "total_plural": "कुल पद: {{count}}"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "posts": {
+    "title": "Post",
+    "title_plural": "Posts",
+    "total": "total Post: {{count}}",
+    "total_plural": "total posts: {{count}}"
+  }
+}

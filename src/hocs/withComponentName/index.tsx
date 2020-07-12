@@ -22,6 +22,10 @@ function withComponentNameClassComponent<T>(
   }
 }
 
+export interface hocProps {
+  inputRef: React.Ref<HTMLInputElement>
+}
+
 function withComponentNameFunctionalComponent<T>(
   WrappedComponent: React.ComponentType<T>
 ) {

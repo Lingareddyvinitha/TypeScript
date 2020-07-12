@@ -4,7 +4,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import { observer } from 'mobx-react'
 
-import withComponentName from '../../hocs/withComponentName'
+import withComponentName, { hocProps } from '../../hocs/withComponentName'
 
 import NoDataView from '../common/NoDataView'
 
@@ -13,15 +13,15 @@ import TodoModel from '../../stores/models/TodoModel'
 import Todo from '../Todo'
 
 import { TodosListWrapper } from './styledComponents'
+import { observable } from 'mobx'
 
 interface TodoListProps extends RouteComponentProps {
   todos: Array<TodoModel>
 }
 
-@observer
 class TodoList extends Component<TodoListProps> {
+  // sampleRef: React.RefObject<HTMLInputElement> = React.createRef()
   render() {
-    console.log('todoList')
     const { todos } = this.props
 
     if (todos.length === 0) {
@@ -36,5 +36,11 @@ class TodoList extends Component<TodoListProps> {
     )
   }
 }
+
+// export default React.forwardRef<HTMLInputElement, TodoListProps & hocProps>(
+//   (props, ref) => {
+//     return <Tod {...props} inputRef={ref} />
+//   }
+// )
 
 export default withRouter(withComponentName(TodoList))
